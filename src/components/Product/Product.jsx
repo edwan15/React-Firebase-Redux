@@ -1,15 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { TbShoppingCartPlus } from "react-icons/tb";
-const Product = () => {
+const Product =  () => {
   const [product, setProduct] = useState([]);
 
+  const api = () => {
     fetch("https://fakestoreapi.com/products")
     .then((res) =>  res.json())
     .then((json) =>  setProduct(json));
+}
+
+useEffect(() => {
+ api()
+}, [])
+
+
 
   return (
     <>
-      <div className=" mx-auto bg-blue-200  py-8">
+      <div className=" mx-auto bg-blue-200  py-12">
         <div className=" px-4">
           <h1 className="text-3xl text-blue-900 font-bold flex gap-4 mb-4 :">
             Productos <TbShoppingCartPlus />
