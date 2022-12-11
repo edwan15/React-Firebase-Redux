@@ -4,14 +4,14 @@ import {FaFileSignature} from "react-icons/fa"
 import Fire from "../../asset/firebase.webp"
 const About = () => {
   return (
-    <div className="container mx-auto mt-32 ">
-      <div className=" p-2  grid grid-cols-2 gap-2">
-        <div className=" p-4">
+    <div className=" mx-auto md:mt-32  ">
+      <div className=" p-2  md:grid grid-cols-2 gap-2">
+        <div className=" p-4 ">
           <div className="">
-            <h1 className="text-7xl font-bold text-blue-900 mb-8">
+            <h1 className=" text-5xl md:text-7xl font-bold text-blue-900 mb-8">
               Contruyendo un Mundo Mejor
             </h1>
-            <div className="grid grid-cols-2">
+            <div className="md:grid grid-cols-2">
               <div className="flex items-center text-xl justify-center">
                 <p>
                   Esta Aplicacion representa productos dentro de un estado

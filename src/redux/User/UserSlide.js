@@ -2,22 +2,43 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   
-  email : "edwan zapata101@hotmail.com",
-  fullname: "",
-  token: ""
+isLoggedIn : false,
+email: null ,
+userName:null,
+userID: null,
 
 }
 
 const UserSlide = createSlice({
-  name: "User",
+  name: "auth",
   initialState,
-  reducers: {
-    setUser:{
+  reducers:{
 
+    SET_ACTIVE_USER:(state,action) => {
+      console.log(action.payload);
+      const {email , userName , userID } = action.payload
+      state.isLoggedIn = true;
+      state.email = email
+      state.userName = userName
+      state.userID = userID
+    },
+    REMOVE_USER: (state,action) => {
+
+      state.isLoggedIn = false
+      state.email = null
+      state.userName = null 
+      state.userID = null
+      console.log(state.isLoggedIn)      
     }
+  
   }
 });
 
-export const { setUser } = UserSlide.actions;
+export const { SET_ACTIVE_USER , REMOVE_USER } = UserSlide.actions;
 
-export default UserSlide.reducer
+export const selectIsLoggedIn = (state) => state.auth
+export const selectEmail = (state) => state.email
+export const selectUserName = (state) => state.useName
+export const selectUserID = (state) => state.userID
+
+export default UserSlide.reducer;

@@ -13,6 +13,22 @@ body {
     sans-serif;
 }
 
+.active{
+  position:sticky;
+  color:red
+}
+.active::after{
+  content: "";
+  position: relative;
+  right: 2px;
+  bottom: 4px;
+  width: 20%;
+  height: 2px;
+  top: 20px;
+  left: -40px;
+  background-color: azure;
+  
+}
 
 @tailwind base;
 @tailwind components;

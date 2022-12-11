@@ -1,9 +1,23 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import CartReducer, { productFecth } from "../Cart/CartSlide";
+import ProductReducer from "../Cart/ProductList";
 import UserReducer from "../User/UserSlide";
+import { productsApi } from "../Cart/ProductApi";
 
 
-export const store = configureStore({
-  reducer: {
-    User: UserReducer,
-  },
+const rootReducer = combineReducers({
+  auth: UserReducer,
+  cart: ProductReducer,
+  product: CartReducer,
+  [productsApi.reducerPath]: productsApi.reducer,
+  });
+  
+  export const store = configureStore({
+    reducer: rootReducer,
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware().concat(productsApi.middleware),
+    
 });
+
+store.dispatch(productFecth())
+export default store;
