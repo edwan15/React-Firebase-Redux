@@ -33,7 +33,7 @@ const Nav = () => {
             userID: user.uid,
           })
         );
-        navigate("/home");
+       
       } else {
         setDisplayName("");
         dispatch(REMOVE_USER());
