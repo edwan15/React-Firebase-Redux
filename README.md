@@ -1,3 +1,10 @@
+En este Repositorio te Dejo el codigo para interactuar con autenticacion de Usuarios desde FireBase , tambien implemente un manejador de estado con Redux para hacer una simulacion de un Carrito de Compras  el cual es 100% responsive utilizando tailwind Css. <br/>
+Made with ❤️ : Edwan zapata
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
